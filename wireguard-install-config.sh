@@ -156,8 +156,8 @@ echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 sysctl -p 1 > /dev/null
 
 echo -e "\n\e[32mSetting up firewall\e[0m\n"
-firewall-cmd --zone=public --permanent --add-masquerade 1 > /dev/null
-firewall-cmd --permanent --add-port=$PUBLIC_VPN_PORT/udp 1 > /dev/null
+firewall-cmd --zone=public --permanent --add-masquerade > /dev/null
+firewall-cmd --permanent --add-port=$PUBLIC_VPN_PORT/udp > /dev/null
 systemctl reload firewalld 1 > /dev/null
 
 echo -e "\n\e[32mConfiguring Wireguard\e[0m\n"
